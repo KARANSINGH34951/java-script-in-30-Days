@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>RealChat</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <section class=”chat__section”>
+ <div class=”brand”>
+ <img height=”40" src=”/logo.png” alt=””>
+ <h1>RealChat</h1>
+ </div>
+ <div class=”message__area”></div>
+ <div>
+ <textarea id=”textarea” cols=”30" rows=”1" placeholder=”Write a message…”></textarea>
+ </div>
+ </section>
+ <script>
+    let name;
+    do {
+      name = prompt('Please enter your name:');
+    } while (!name);
+  </script>
+
+<script>
+    const socket = io();
+  
+    function sendMessage(message) {
+      let msg = {
+        user: name,
+        message: message.trim(),
+      };
+  
+      // Append outgoing message to the chat interface
+      appendMessage(msg, 'outgoing');
+  
+      // Clear the textarea
+      document.querySelector('#textarea').value = '';
+  
+      // Scroll to the bottom of the chat area
+      scrollToBottom();
+  
+      // Send the message to the server
+      socket.emit('message', msg);
+    }
+  
+    // Step 3: Create the appendMessage function to add the user's messages to the chat interface.
+    function appendMessage(msg, type) {
+      let mainDiv = document.createElement('div');
+      let className = type;
+      mainDiv.classList.add(className, 'message');
+  
+      let markup = `
+          <h4>${msg.user}</h4>
+          <p>${msg.message}</p>
+      `;
+  
+      mainDiv.innerHTML = markup;
+      document.querySelector('.message__area').appendChild(mainDiv);
+    }
+  
+    // Step 4: Implement the scrollToBottom function to automatically scroll to the latest message.
+    function scrollToBottom() {
+      let messageArea = document.querySelector('.message__area');
+      messageArea.scrollTop = messageArea.scrollHeight;
+    }
+  
+    document.querySelector('#textarea').addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage(e.target.value);
+      }
+    });
+  </script>  
+
+<script src="/socket.io/socket.io.js"></script>
+ <script src="/client.js"></script>
+</body>
+</html>
