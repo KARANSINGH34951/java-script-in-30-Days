@@ -1,0 +1,72 @@
+.container1{
+  margin: 20px;
+  align-items: center;
+  /* display: inline-block; */
+  height: 50vh;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: red;
+}
+.childcontainer{
+  margin: 10px;
+  align-items: center;
+  /* display: inline-block; */
+  height: 20vh;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: yellow;
+}
+.child{
+  margin: 5px;
+  align-items: center;
+  /* display: inline-block; */
+  height: 10vh;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

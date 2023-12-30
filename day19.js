@@ -27,7 +27,7 @@
 //     username:"arjun",
 //     logincount:4,
 //     signin:false,
-
+d
 //     getuserdetails: function(){
 //         console.log("karan in function")
 //         console.log(`username:${this.username}`)
@@ -54,10 +54,6 @@ console.log(funcusername.constructor)
 console.log(funcusername2)
 
 // console.log(funcusername.logincount)
-
-
-
-const new hero={"hulk","spiderman"}
 
 
 

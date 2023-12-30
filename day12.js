@@ -5,7 +5,7 @@ const doc2=document.querySelector("#heading1");
 console.log(doc2);
 
 let firstele = document.querySelector("p");
-console.log(firstele);
+console.log(firstele);d
 
 let div=document.querySelector("div")
 console.dir(div)
