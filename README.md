@@ -1,4 +1,4 @@
 # JAVA-SCRIPT-NOTES
 
-#day 1 to day60 java script learning
+#day 1 to 30 days of java script learning
 

@@ -1,26 +1,51 @@
-let url ="https://api.thecatapi.com/v1/images/0XYvRd7oD"
+let url ="https://cat-fact.herokuapp.com/facts"
+const para=document.querySelector("#fact");
+const btn=document.querySelector("#btn");
 
-let factpara=document.getElementsByClassName("para")
 
-let Promise = fetch(url)
-console.log(Promise);
+// const getfact= async()=>{
+//     console.log("getting data...");
+//     let response =await fetch(url)
+//     console.log(response);
+//     console.log(response.status);
 
-const getfacts= async()=>{
-    console.log("getting data.....");
-    let response=await fetch(url);
-    console.log(response); //
-    console.log(response.status);
+//     let data= await response.json()
+//     console.log(data);
+    
+//     para.innerText=data[0].text;
+//     para.innerText=data[1].text;
+// }
 
-    let data=await response.json()
-    console.log(data);
-    console.log(data[0].innerText);
-    // console.log(response2[0].text);
-    // factpara=factpara.innerText=data[0].text
-    // console.log(factpara);
+// btn.addEventListener("click",getfact);
 
+//promise changing
+
+function getfact(){
+    fetch(url).then((response)=>{
+        return response.json()
+    }).then((data)=>{
+        console.log(data);
+        para.innerText=data[1].text;
+    })
 }
 
-getfacts()
+btn.addEventListener("click",getfact);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
