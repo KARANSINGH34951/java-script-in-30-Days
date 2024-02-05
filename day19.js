@@ -39,7 +39,7 @@ d
 
 function user3(username,logincount,isloggedin){
     this.username=username;
-    this.logincount-logincount;
+    this.logincount=logincount;
     this.isloggedin=isloggedin
     // return this by default its implimenet by implicitly
     this.greeting=function(){
