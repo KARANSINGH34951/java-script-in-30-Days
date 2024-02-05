@@ -1,3 +1,39 @@
+// callback hell recape
+
+let mynum=[23,45,67,88,89,-3,-5,-78]
+
+let posnum= negavativenum(mynum,(x)=>x>0)
+console.log(posnum);
+
+function negavativenum(mynum,callback){
+  let myarr=[]
+  for(let item of mynum){
+    if(callback(item)){
+      myarr.push(item)
+    }
+  }
+  return myarr  
+}
+
+function sum(x,y,callbacks){
+  let rese=x+y;
+  callbacks(rese)
+}
+
+
+let result=sum(4,6,(rese)=>{
+  console.log("result :",rese);
+})
+
+
+
+
+
+
+
+
+
+
 // promises recape
 
 let stocks = {
@@ -10,6 +46,7 @@ let stocks = {
 let is_shop_open = true;
 
 let order =(time,work)=>{
+
   return new Promise((resolve,reject)=>{
 
     if(is_shop_open){
@@ -63,10 +100,14 @@ order(2000,()=>console.log(`the function ${stocks.Fruits[0]}`))
   return order(2000,()=>{
     console.log("serve ice cream");
   })
-  
 })
-
-
+.catch(()=>{
+  console.log("customer left");
+  // console.log(err);
+})
+.finally(()=>{
+  console.log("finally process ends");
+})
 
 
 
