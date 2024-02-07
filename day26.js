@@ -26,8 +26,6 @@ let result=sum(4,6,(rese)=>{
 })
 
 
-
-
 // promises recape
 
 let stocks = {
